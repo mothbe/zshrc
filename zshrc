@@ -55,3 +55,8 @@ zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)'
 # zstyle ':vcs_info:git:*' formats '%F{green}(%b)%r%f'
 # zstyle ':vcs_info:git:*' formats '%F{240}(%b)%r%f'
 zstyle ':vcs_info:*' enable git
+
+
+alias virtualenv="source /usr/local/bin/virtualenvwrapper.sh"
+alias vim="nvim"
+alias vimdiff="nvim -d"
