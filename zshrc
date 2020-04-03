@@ -1,3 +1,4 @@
+# zmodload zsh/zprof
 ## Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -9,9 +10,13 @@ bindkey -v
 ## The following lines were added by compinstall
 zstyle :compinstall filename '/Users/marcin/.zshrc'
 
-autoload -Uz compinit promptinit
-compinit
-promptinit
+# autoload -Uz compinit promptinit
+# compinit
+# compinit -u -i -C
+# promptinit
+
+## Load configuration
+source ${HOME}/.zsh-red/config.sh
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' rehash true
@@ -54,3 +59,5 @@ zstyle ':vcs_info:*' enable git
 alias virtualenv="source /usr/local/bin/virtualenvwrapper.sh"
 alias vim="nvim"
 alias vimdiff="nvim -d"
+
+# zprof
