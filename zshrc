@@ -46,8 +46,9 @@ bindkey "\e[3~" delete-char
 setopt COMPLETE_ALIASES
 # prompt walters
 # PROMPT='%F{152}%2~%f %# '
+PROMPT='%F{152}%2~%f %(!.#.>) '
 
-export PROMPT='%F{152}$USER: %F{152}%2~%f %# '
+# PROMPT='%F{152}$USER: %F{152}%2~%f %# '
 
 ## Enable git help
 autoload -Uz run-help-git
