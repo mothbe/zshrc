@@ -17,9 +17,21 @@ zstyle :compinstall filename '/Users/marcin/.zshrc'
 
 ## Load configuration
 source ${HOME}/.zsh-red/config.sh
+source ${HOME}/.zsh-red/there-and-appearance.zsh
+source ${HOME}/.zsh-red/directories.zsh
+source ${HOME}/.zsh-red/completion.zsh
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' rehash true
+
+# autoload -U colors zsh/terminfo
+# colors
+# zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+# colors-from-zsh-tab-completion
+# eval "$(dircolors)"
+zstyle ':completion:*' list-colors
+# zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 autoload -U history-search-end
 zle -N history-beginning-search-backward-end history-search-end
@@ -27,10 +39,14 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^[[A" history-beginning-search-backward-end
 bindkey "^[[B" history-beginning-search-forward-end
 bindkey '^R' history-incremental-search-backward
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+bindkey "\e[3~" delete-char
 
 setopt COMPLETE_ALIASES
 # prompt walters
 # PROMPT='%F{152}%2~%f %# '
+
 export PROMPT='%F{152}$USER: %F{152}%2~%f %# '
 
 ## Enable git help
@@ -54,6 +70,7 @@ zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)'
 # zstyle ':vcs_info:git:*' formats '%F{green}(%b)%r%f'
 # zstyle ':vcs_info:git:*' formats '%F{240}(%b)%r%f'
 zstyle ':vcs_info:*' enable git
+
 
 ## Aliases
 alias virtualenv="source /usr/local/bin/virtualenvwrapper.sh"
