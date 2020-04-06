@@ -13,3 +13,8 @@ if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ${ZSH_COMPDUMP}) ]; then
 else
   compinit -u -C -d "${ZSH_COMPDUMP}"
 fi
+
+# Custom PATH for MacOS
+if [[ "$OSTYPE" == (darwin)* ]]; then
+  export PATH=$PATH:/Users/mwitowski/Library/Python/2.7/bin/:/Users/mwitowski/Library/Python/2.7/bin
+fi
