@@ -68,7 +68,7 @@ precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 RPROMPT=\$vcs_info_msg_0_
 # zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)'
-zstyle ':vcs_info:git:*' formats '%F{green}(%b)%r%f'
+zstyle ':vcs_info:git:*' formats '%F{red}(%b*)%F{240}%r%f'
 # zstyle ':vcs_info:git:*' formats '%F{240}(%b)%r%f'
 zstyle ':vcs_info:*' enable git
 
