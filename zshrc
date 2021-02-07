@@ -16,10 +16,10 @@ zstyle :compinstall filename '/Users/marcin/.zshrc'
 # promptinit
 
 ## Load configuration
-source ${HOME}/.zsh-red/config.sh
-source ${HOME}/.zsh-red/there-and-appearance.zsh
-source ${HOME}/.zsh-red/directories.zsh
-source ${HOME}/.zsh-red/completion.zsh
+source ${HOME}/.zshrc.git/config.sh
+source ${HOME}/.zshrc.git/there-and-appearance.zsh
+source ${HOME}/.zshrc.git/directories.zsh
+source ${HOME}/.zshrc.git/completion.zsh
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' rehash true

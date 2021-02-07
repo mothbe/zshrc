@@ -3,6 +3,6 @@
 ## Install
 
 ```
-git clone <url> ${HOME}/.zsh-red
-ln -s ${HOME}/.zsh-red ${HOME}/.zshrc
+git clone <url> ${HOME}/.zshrc.git
+ln -s ${HOME}/.zshrc.git ${HOME}/.zshrc
 ```
