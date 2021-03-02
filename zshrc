@@ -8,7 +8,7 @@ bindkey -v
 ## End of lines configured by zsh-newuser-install
 
 ## The following lines were added by compinstall
-zstyle :compinstall filename '/Users/marcin/.zshrc'
+zstyle :compinstall filename "${HOME}/.zshrc"
 
 # autoload -Uz compinit promptinit
 # compinit
