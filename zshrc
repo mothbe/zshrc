@@ -46,7 +46,7 @@ bindkey "\e[3~" delete-char
 setopt COMPLETE_ALIASES
 # prompt walters
 # PROMPT='%F{152}%2~%f %# '
-PROMPT='%F{152}%2~%f %(!.#.>) '
+# PROMPT='%F{152}%2~%f %(!.#.>) '
 
 # PROMPT='%F{152}$USER: %F{152}%2~%f %# '
 
@@ -66,9 +66,17 @@ autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
-RPROMPT=\$vcs_info_msg_0_
-# zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)'
-zstyle ':vcs_info:git:*' formats '%F{red}(%b*)%F{240}%r%f'
+#PROMPT='%F{152}%2~%f %(!.#.>) '
+#RPROMPT=\$vcs_info_msg_0_
+PROMPT='${vcs_info_msg_0_} %F{152}%2~%f %(!.#.>) '
+#zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)'
+# zstyle ':vcs_info:git*' actionformats "%r/%S %b %m%u%c "
+#zstyle ':vcs_info:git:*' formats '%F{red}(%b*)%F{240}%r%f'
+#zstyle ':vcs_info:*' check-for-changes true 
+zstyle ':vcs_info:git:*' formats '%F{red}(%r|%b)%f'
+# zstyle ':vcs_info:git:*' formats '%F{red}(%b)%m%u%c%f'
+# zstyle ':vcs_info:git:*' formats '%F{red}(%b*)%F{240}%r%f'
+#zstyle ':vcs_info:git*' formats "%{$fg[grey]%}%s
 # zstyle ':vcs_info:git:*' formats '%F{240}(%b)%r%f'
 zstyle ':vcs_info:*' enable git
 
@@ -78,6 +86,13 @@ alias virtualenv="source /usr/local/bin/virtualenvwrapper.sh"
 alias vim="nvim"
 alias vimdiff="nvim -d"
 
+alias sha512sum="shasum -a 512 $@"
+
 # zprof
 #
 eval "$(pyenv init -)"
+
+fpath=($fpath ~/.zsh/completion)
+
+# Created by `pipx` on 2022-06-24 09:07:28
+export PATH="$PATH:$HOME/.local/bin:$HOME/go/bin"
