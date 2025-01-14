@@ -73,7 +73,7 @@ PROMPT='${vcs_info_msg_0_} %F{152}%2~%f %(!.#.>) '
 # zstyle ':vcs_info:git*' actionformats "%r/%S %b %m%u%c "
 #zstyle ':vcs_info:git:*' formats '%F{red}(%b*)%F{240}%r%f'
 #zstyle ':vcs_info:*' check-for-changes true 
-zstyle ':vcs_info:git:*' formats '%F{red}(%r|%b)%f'
+zstyle ':vcs_info:git:*' formats '%F{grey}(%r|%F{red}%b)%f'
 # zstyle ':vcs_info:git:*' formats '%F{red}(%b)%m%u%c%f'
 # zstyle ':vcs_info:git:*' formats '%F{red}(%b*)%F{240}%r%f'
 #zstyle ':vcs_info:git*' formats "%{$fg[grey]%}%s
@@ -87,6 +87,8 @@ alias vim="nvim"
 alias vimdiff="nvim -d"
 
 alias sha512sum="shasum -a 512 $@"
+alias tmux-ns="tmux new-session -s  $(basename $(pwd))"
+alias k="kubectl"
 
 # zprof
 #
@@ -95,4 +97,32 @@ eval "$(pyenv init -)"
 fpath=($fpath ~/.zsh/completion)
 
 # Created by `pipx` on 2022-06-24 09:07:28
-export PATH="$PATH:$HOME/.local/bin:$HOME/go/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.bin:$HOME/go/bin"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+#export PATH="/Users/zp2103/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+source <(kubectl completion zsh)
+
+export SSH_AUTH_SOCK=~/.1password/agent.sock
+
+
+. "$HOME/.cargo/env"
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+source "/Users/zp2103/.sdkman/bin/sdkman-init.sh"
+
+# bun
+export BUN_INSTALL="$HOME/Library/Application Support/reflex/bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+source $HOME/.zshrc.git/gc.sh
